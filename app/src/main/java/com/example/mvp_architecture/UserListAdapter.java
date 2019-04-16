@@ -60,8 +60,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.VievHo
         public void bind (User u) {
             name.setText(u.getName());
             sename.setText(u.getSurname());
-            age.setText(u.getName());
-            weight.setText(u.getSurname());
+//            age.setText(u.getAge() + "");
+            age.setText(Integer.toString(u.getAge()));
+            weight.setText(String.valueOf(u.getWeight()));//не передає дробові числа
         }
     }
 }
