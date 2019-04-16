@@ -1,4 +1,4 @@
-package com.example.mvp_architecture;
+package com.example.mvp_architecture.help_interface;
 
 public interface UserPresent {
 

@@ -23,4 +23,10 @@
         android:layout_height="wrap_content"
         tools:text="Age:19" />
 
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Weight:3" />
+
 </LinearLayout>

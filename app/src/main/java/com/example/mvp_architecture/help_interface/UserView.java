@@ -1,4 +1,6 @@
-package com.example.mvp_architecture;
+package com.example.mvp_architecture.help_interface;
+
+import com.example.mvp_architecture.User;
 
 import java.util.List;
 
