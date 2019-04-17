@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import com.example.mvp_architecture.api.UserApi;
 import com.example.mvp_architecture.help_interface.UserPresent;
@@ -19,18 +21,32 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity implements UserView {
 
     private UserPresent present;
-    RecyclerView mRecyclerView;
-    UserListAdapter mAdapter;
+    private RecyclerView mRecyclerView;
+    private UserListAdapter mAdapter;
+    private CheckBox ageCheckbox;
+    private CheckBox nameCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initViews();
         inject();
-        mRecyclerView = findViewById(R.id.rv);
         initRecycler();
-        present.onLoadUserClicked();
+        present.onLoadUserClicked(ageCheckbox.isChecked(), nameCheckbox.isChecked());
+        nameCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            }
+        });
+    }
+
+    private void initViews() {
+        ageCheckbox = findViewById(R.id.ageCheckbox);
+        nameCheckbox = findViewById(R.id.nameCheckbox);
+        mRecyclerView = findViewById(R.id.rv);
     }
 
     @Override

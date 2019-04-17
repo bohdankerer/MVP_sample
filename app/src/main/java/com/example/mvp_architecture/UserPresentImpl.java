@@ -18,12 +18,18 @@ public class UserPresentImpl implements UserPresent {
     }
 
     @Override
-    public void onLoadUserClicked() {
+    public void onLoadUserClicked(final boolean isSortByAge, final boolean isSortByName) {
         view.showLoading();
 
-        repository.makeRequst(new NetworkCallback<List<User>>() {
+        repository.loadUsers(new NetworkCallback<List<User>>() {
             @Override
-            public void onSuccecfull(List<User> users) {
+            public void onSuccess(List<User> users) {
+                if (isSortByAge) {
+                    //todo implements
+                }
+                if (isSortByName) {
+                    //todo implements use comparator
+                }
                 view.showUsers(users);
                 view.hideLoading();
             }

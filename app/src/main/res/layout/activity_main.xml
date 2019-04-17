@@ -10,10 +10,12 @@
         android:text="Sorting:" />
 
     <CheckBox
+        android:id="@+id/nameCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="By age"/>
     <CheckBox
+        android:id="@+id/ageCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="By name"/>

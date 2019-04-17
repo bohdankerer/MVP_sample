@@ -19,11 +19,11 @@ public class UserRepositoruImpl implements UserRepository {
     }
 
     @Override
-    public void makeRequst(final NetworkCallback<List<User>> callback) {
+    public void loadUsers(final NetworkCallback<List<User>> callback) {
         api.getUsers().enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                callback.onSuccecfull(response.body());
+                callback.onSuccess(response.body());
             }
 
             @Override
