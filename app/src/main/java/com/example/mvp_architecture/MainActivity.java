@@ -7,14 +7,17 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ProgressBar;
 
 import com.example.mvp_architecture.api.UserApi;
+import com.example.mvp_architecture.help_interface.NetworkCallback;
 import com.example.mvp_architecture.help_interface.UserPresent;
 import com.example.mvp_architecture.help_interface.UserRepository;
 import com.example.mvp_architecture.help_interface.UserView;
 
 import java.util.List;
 
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -38,7 +41,13 @@ public class MainActivity extends AppCompatActivity implements UserView {
         nameCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
+                present.onLoadUserClicked(false, false);
+            }
+        });
+        ageCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                present.onLoadUserClicked(false, false);
             }
         });
     }
@@ -48,6 +57,14 @@ public class MainActivity extends AppCompatActivity implements UserView {
         nameCheckbox = findViewById(R.id.nameCheckbox);
         mRecyclerView = findViewById(R.id.rv);
     }
+
+    private void startProgress(){
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(ProgressBar.VISIBLE);
+// запускаем длительную операцию
+        progressBar.setVisibility(ProgressBar.INVISIBLE);
+    }
+
 
     @Override
     public void showLoading() {

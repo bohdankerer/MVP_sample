@@ -5,4 +5,5 @@ public interface NetworkCallback<T> {
     void onSuccess(T t);
 
     void onError();
+
 }

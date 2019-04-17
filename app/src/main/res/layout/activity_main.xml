@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_fon_user_card"
     android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_gravity="center"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@android:color/background_dark" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,12 +24,19 @@
         android:id="@+id/nameCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="By age"/>
+        android:text="By age" />
+
     <CheckBox
         android:id="@+id/ageCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="By name"/>
+        android:text="By name" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
