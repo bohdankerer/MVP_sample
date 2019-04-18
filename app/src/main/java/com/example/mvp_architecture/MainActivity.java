@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements UserView {
     private UserListAdapter mAdapter;
     private CheckBox ageCheckbox;
     private CheckBox nameCheckbox;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,22 +59,16 @@ public class MainActivity extends AppCompatActivity implements UserView {
         mRecyclerView = findViewById(R.id.rv);
     }
 
-    private void startProgress(){
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        progressBar.setVisibility(ProgressBar.VISIBLE);
-// запускаем длительную операцию
-        progressBar.setVisibility(ProgressBar.INVISIBLE);
-    }
-
-
     @Override
     public void showLoading() {
-        Log.d("TAG", "SHOW LOADING");
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(ProgressBar.VISIBLE);
+
     }
 
     @Override
     public void hideLoading() {
-        Log.d("TAG", "HIDE LOADING");
+        progressBar.setVisibility(ProgressBar.INVISIBLE);
     }
 
     @Override
