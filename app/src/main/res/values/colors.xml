@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="my_color">#EE6194</color>
+    <color name="color_text">#60A7FF</color>
+    <color name="color_fon_user_card">#FAFCF6F6</color>
 </resources>
